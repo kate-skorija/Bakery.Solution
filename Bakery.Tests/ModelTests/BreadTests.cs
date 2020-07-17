@@ -10,24 +10,33 @@ namespace Bakery.TestTools
     [TestMethod]
     public void BreadConstructor_CreatesInstanceOfBread_Bread()
     {
-      Bread newBread = new Bread(5, 2);
+      Bread newBread = new Bread(2);
       Assert.AreEqual(typeof(Bread), newBread.GetType());
     }
     [TestMethod]
     public void GetPrice_ReturnsPrice_Int()
     {
       int testPrice = 5;
-      Bread newBread = new Bread(testPrice, 2);
+      Bread newBread = new Bread(2);
       int result = newBread.Price;
       Assert.AreEqual(testPrice, result);
     }
     [TestMethod]
-    public void GetNumberofLoaves_ReturnsNumberofLoaves_Int()
+    public void GetNumberOfLoaves_ReturnsNumberOfLoaves_Int()
     {
       int testLoaves = 2;
-      Bread newBread = new Bread(5, testLoaves);
+      Bread newBread = new Bread(testLoaves);
       int result = newBread.NumberOfLoaves;
       Assert.AreEqual(testLoaves, result);
+    }
+    [TestMethod]
+    public void GetPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
+    { 
+      int testLoaves = 2;
+      int testPrice = 10;
+      Bread newBread = new Bread(testLoaves);
+      int result = newBread.Price;
+      Assert.AreEqual(testPrice, result);
     }
   }
 }
