@@ -30,12 +30,12 @@ namespace Bakery.TestTools
       Assert.AreEqual(testLoaves, result);
     }
     [TestMethod]
-    public void GetPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
+    public void GetTotalBreadPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
     { 
       int testLoaves = 2;
       int testPrice = 10;
       Bread newBread = new Bread(testLoaves);
-      int result = newBread.Price;
+      int result = newBread.TotalBreadPrice();
       Assert.AreEqual(testPrice, result);
     }
   }

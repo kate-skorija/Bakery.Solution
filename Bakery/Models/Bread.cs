@@ -7,10 +7,17 @@ namespace Bakery.Models
   {
     public int Price { get; set; }
     public int NumberOfLoaves { get; set; }
-    public Bread(int price, int numberOfLoaves)
+    public Bread(int numberOfLoaves)
     {
-      Price = price;
+      Price = 5;
       NumberOfLoaves = numberOfLoaves;
+    }
+
+    public int TotalBreadPrice()
+    {
+      int totalBreadPrice = 0;
+      totalBreadPrice += (Price * NumberOfLoaves);
+      return totalBreadPrice;
     }
   }
 }
