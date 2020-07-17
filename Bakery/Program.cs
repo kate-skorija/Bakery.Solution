@@ -16,7 +16,7 @@ public class Order
   }
   public void OrderBread()
   {
-    Console.WriteLine("How many loaves of bread would you like to order?");
+    Console.WriteLine("How many loaves of bread would you like to order, " + OrderName + "?");
     string stringLoaves = Console.ReadLine();
     int numberOfLoaves = int.Parse(stringLoaves);
     Bread userBreadOrder = new Bread(numberOfLoaves); 
@@ -27,7 +27,7 @@ public class Order
   }
   public void OrderPastries()
   {
-    Console.WriteLine("How many pastries would you like to order?");
+    Console.WriteLine("How many pastries would you like to order, " + OrderName + "?");
     string stringPastries = Console.ReadLine();
     int numberOfPastries = int.Parse(stringPastries);
     Pastry userPastryOrder = new Pastry(numberOfPastries);
@@ -37,20 +37,24 @@ public class Order
   }
   public void DisplayOrder()
   {
-    Console.WriteLine(OrderName + "'s Order");
+    Console.WriteLine("~ " + OrderName + "'s Order ~");
     Console.WriteLine("Number of Loaves: " + TotalLoaves);
     Console.WriteLine("Number of Pastries: " + TotalPastries);
     Console.WriteLine("Total: $" + OrderPrice);
   }
   public static void Main()
   {
-    Console.WriteLine("Welcome to Pierre's Bakery! Today we have loaves of bread and pastries for sale.");
+    Console.WriteLine("Welcome to Pierre's Bakery! Today we have loaves of bread and pastries for sale. [Press 'Enter' to continue]");
+    Console.ReadLine();
     Console.WriteLine("Loaves of bread cost $5 each, and pastries cost $2 each.");
+    Console.ReadLine();
     Console.WriteLine("Pierre's offers the following deals:");
+    Console.ReadLine();
     Console.WriteLine("Loaves: Buy 2, Get One Free");
     Console.WriteLine("Pastries: 3 for $5");
+    Console.ReadLine();
 
-    Console.WriteLine("Would you like to place an order? [Enter 'Y' for 'Yes', 'N' for 'No']");
+    Console.WriteLine("So, would you like to place an order? [Enter 'Y' for 'Yes', any other key for 'No']");
     string answer = Console.ReadLine();
     if (answer == "Y" || answer == "y")
     {
