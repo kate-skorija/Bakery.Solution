@@ -35,6 +35,13 @@ public class Order
     TotalPastries += userPastryOrder.NumberOfPastries;
     OrderPrice += userPastryOrder.Price;
   }
+  public void DisplayOrder()
+  {
+    Console.WriteLine(OrderName + "'s Order");
+    Console.WriteLine("Number of Loaves: " + TotalLoaves);
+    Console.WriteLine("Number of Pastries: " + TotalPastries);
+    Console.WriteLine("Total: $" + OrderPrice);
+  }
   public static void Main()
   {
     Console.WriteLine("Welcome to Pierre's Bakery! Today we have loaves of bread and pastries for sale.");
@@ -52,6 +59,7 @@ public class Order
       Order newOrder = new Order(orderName, 0, 0, 0);
       newOrder.OrderBread();
       newOrder.OrderPastries();
+      newOrder.DisplayOrder();
     }
     else
     {
