@@ -15,7 +15,16 @@ namespace Bakery.Models
     }
     public void TotalPastryPrice()
     {
-      Price = (Price * NumberOfPastries);
+      int pastryDeal = (NumberOfPastries / 3);
+      if (pastryDeal >= 1)
+      {
+        Price = (Price * NumberOfPastries);
+        Price -= pastryDeal;
+      }
+      else
+      {
+        Price = (Price * NumberOfPastries);
+      }
     }
   }
 }
