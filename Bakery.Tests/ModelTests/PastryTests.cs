@@ -42,8 +42,8 @@ namespace Bakery.TestTools
     [TestMethod]
     public void TotalPastryPrice_ReturnsPriceBasedOnDeal_Int()
     { 
-      int testPastries = 6;
-      int testPrice = 10;
+      int testPastries = 5;
+      int testPrice = 9;
       Pastry newPastry = new Pastry(testPastries);
       newPastry.TotalPastryPrice();
       int result = newPastry.Price;
