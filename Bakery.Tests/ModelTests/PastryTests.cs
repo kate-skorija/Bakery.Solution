@@ -35,7 +35,8 @@ namespace Bakery.TestTools
       int testPastries = 2;
       int testPrice = 4;
       Pastry newPastry = new Pastry(testPastries);
-      int result = newPastry.TotalPastryPrice();
+      newPastry.TotalPastryPrice();
+      int result = newPastry.Price;
       Assert.AreEqual(testPrice, result);
     }
   }

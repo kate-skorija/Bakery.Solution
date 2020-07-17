@@ -13,11 +13,9 @@ namespace Bakery.Models
       Price = 2;
       NumberOfPastries = numberOfPastries;
     }
-    public int TotalPastryPrice()
+    public void TotalPastryPrice()
     {
-      int totalPastryPrice = 0;
-      totalPastryPrice += (Price * NumberOfPastries);
-      return totalPastryPrice;
+      Price = (Price * NumberOfPastries);
     }
   }
 }
