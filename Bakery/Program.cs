@@ -1,8 +1,19 @@
 using System;
 using Bakery.Models;
 
-public class Program
+public class Order
 {
+  public string OrderName { get; set; }
+  public int TotalLoaves { get; set; }
+  public int TotalPastries { get; set; }
+  public int OrderPrice { get; set; }
+  public Order(string orderName, int totalLoaves, int totalPastries, int orderPrice)
+  {
+    OrderName = orderName;
+    TotalLoaves = totalLoaves;
+    TotalPastries = totalPastries;
+    OrderPrice = orderPrice;
+  }
   public static void Main()
   {
     Console.WriteLine("Welcome to Pierre's Bakery! Today we have loaves of bread and pastries for sale.");
@@ -11,24 +22,17 @@ public class Program
     Console.WriteLine("Loaves: Buy 2, Get One Free");
     Console.WriteLine("Pastries: 3 for $5");
 
-    Console.WriteLine("How many loaves of bread would you like to order?");
-    string stringLoaves = Console.ReadLine();
-    int numberOfLoaves = int.Parse(stringLoaves);
-    Bread userBreadOrder = new Bread(numberOfLoaves); 
-    userBreadOrder.TotalBreadPrice();
-    userBreadOrder.BreadDeal();
-
-    Console.WriteLine("How many pastries would you like to order?");
-    string stringPastries = Console.ReadLine();
-    int numberOfPastries = int.Parse(stringPastries);
-    Pastry userPastryOrder = new Pastry(numberOfPastries);
-    userPastryOrder.TotalPastryPrice();
-
-    Console.WriteLine("Number of Loaves: " + userBreadOrder.NumberOfLoaves);
-    Console.WriteLine("Number of Pastries: " + userPastryOrder.NumberOfPastries);
-    Console.WriteLine("Bread Price: " + userBreadOrder.Price);
-    Console.WriteLine("Pastry Price: " + userPastryOrder.Price);
-    int totalOrderPrice = (userBreadOrder.Price + userPastryOrder.Price);
-    Console.WriteLine(totalOrderPrice);
+    Console.WriteLine("Would you like to place an order? [Enter 'Y' for 'Yes', 'N' for 'No']");
+    string answer = Console.ReadLine();
+    if (answer == "Y" || answer == "y")
+    {
+      Console.WriteLine("Please enter an order name.");
+      string orderName = Console.ReadLine();
+      Order newOrder = new Order(orderName, 0, 0, 0);
+    }
+    else
+    {
+      Console.WriteLine("Goodbye!");
+    }
   }
 }
