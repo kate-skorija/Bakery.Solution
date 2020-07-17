@@ -1,15 +1,12 @@
 using System;
-using System.Drawing;
-using System.Console;
-using Console = Colorful.Console;
 using Bakery.Models;
 
 public class Program
 {
   private static string _orderName;
-  private int _loavesOrder;
-  private int _pastriesOrder;
-  private int _orderPrice;
+  private static int _loavesOrder;
+  private static int _pastriesOrder;
+  private static int _orderPrice;
   public void OrderBread()
   {
     Console.WriteLine("How many loaves of bread would you like to order, " + _orderName + "?");
@@ -19,11 +16,6 @@ public class Program
     userBreadOrder.TotalBreadPrice();
     _loavesOrder += userBreadOrder.NumberOfLoaves;
     _orderPrice += userBreadOrder.Price;
-  }
-  public void AddExtraLoaves()
-  {
-    int freeLoaves = (_loavesOrder / 2); 
-    _loavesOrder += freeLoaves;
   }
   public void OrderPastries()
   {
@@ -43,7 +35,11 @@ public class Program
     Console.WriteLine("Total: $" + _orderPrice);
     AddToOrder();
   }
-
+  public void AddExtraLoaves()
+  {
+    int freeLoaves = (_loavesOrder / 2); 
+    _loavesOrder += freeLoaves;
+  }
   public void AddToOrder()
   {
     Console.WriteLine("Would you like to add anything to your order? (Your extra loaves will be added at checkout.) [Enter 'Y' for 'Yes', any other key for 'No']");
@@ -54,20 +50,15 @@ public class Program
       OrderPastries();
       AddExtraLoaves();
     }
-      Console.WriteLine("~ " + _orderName + "'s Order ~");
-      Console.WriteLine("Number of Loaves: " + _loavesOrder);
+      AddExtraLoaves();
+      Console.WriteLine("~ " + _orderName + "'s Final Order ~");
+      Console.WriteLine("Number of Loaves (with deal): " + _loavesOrder);
       Console.WriteLine("Number of Pastries: " + _pastriesOrder);
       Console.WriteLine("Total: $" + _orderPrice);
       Console.WriteLine("Order Complete! Thank you for shopping at Pierre's Bakery.");
   }
-
   public static void Main()
   {
-    var font = FigletFont.Load("bulbhead.flf");
-    Figlet figlet = new Figlet(font);
-    Console.WriteLine("console in pink", Color.Pink);
-    Console.WriteLine("console in default");
-    Console.WriteLine(figlet.ToAscii("Welcome to Pierre's Bakery!"));
     Console.WriteLine("Welcome to Pierre's Bakery! [Press 'Enter' to continue]");
     Console.ReadLine();
     Console.WriteLine("Today we are offering loaves of garlic bread and blueberry pastries.");
