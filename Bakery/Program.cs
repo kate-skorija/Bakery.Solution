@@ -14,6 +14,27 @@ public class Order
     TotalPastries = totalPastries;
     OrderPrice = orderPrice;
   }
+  public void OrderBread()
+  {
+    Console.WriteLine("How many loaves of bread would you like to order?");
+    string stringLoaves = Console.ReadLine();
+    int numberOfLoaves = int.Parse(stringLoaves);
+    Bread userBreadOrder = new Bread(numberOfLoaves); 
+    userBreadOrder.TotalBreadPrice();
+    userBreadOrder.BreadDeal();
+    TotalLoaves += userBreadOrder.NumberOfLoaves;
+    OrderPrice += userBreadOrder.Price;
+  }
+  public void OrderPastries()
+  {
+    Console.WriteLine("How many pastries would you like to order?");
+    string stringPastries = Console.ReadLine();
+    int numberOfPastries = int.Parse(stringPastries);
+    Pastry userPastryOrder = new Pastry(numberOfPastries);
+    userPastryOrder.TotalPastryPrice();
+    TotalPastries += userPastryOrder.NumberOfPastries;
+    OrderPrice += userPastryOrder.Price;
+  }
   public static void Main()
   {
     Console.WriteLine("Welcome to Pierre's Bakery! Today we have loaves of bread and pastries for sale.");
@@ -29,6 +50,8 @@ public class Order
       Console.WriteLine("Please enter an order name.");
       string orderName = Console.ReadLine();
       Order newOrder = new Order(orderName, 0, 0, 0);
+      newOrder.OrderBread();
+      newOrder.OrderPastries();
     }
     else
     {
