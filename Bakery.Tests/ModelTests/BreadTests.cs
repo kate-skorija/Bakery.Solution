@@ -41,11 +41,12 @@ namespace Bakery.TestTools
     [TestMethod]
     public void BreadDeal_ReturnsNumberOfLoavesBasedOnDeal_Int()
     { 
-      int testLoaves = 2;
-      Bread newBread = new Bread(testLoaves);
-      int dealLoaves = 3;
+      int startingLoaves = 2;
+      Bread newBread = new Bread(startingLoaves);
+      int totalLoaves = 3;
+      newBread.BreadDeal();
       int result = newBread.NumberOfLoaves;
-      Assert.AreEqual(dealLoaves, result);
+      Assert.AreEqual(totalLoaves, result);
     }
   }
 }
