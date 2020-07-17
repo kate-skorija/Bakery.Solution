@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a C# console application that takes a user's order for bread and pastries from Pierre's Bakery. The application returns the total cost of the order.
+This is a C# console application that takes a user's order for bread and pastries from Pierre's Bakery. The application returns the total cost of the order, taking into account any deals that may be available.
 
 ## Specifications
 
