@@ -30,13 +30,22 @@ namespace Bakery.TestTools
       Assert.AreEqual(testLoaves, result);
     }
     [TestMethod]
-    public void GetTotalBreadPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
+    public void TotalBreadPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
     { 
       int testLoaves = 2;
       int testPrice = 10;
       Bread newBread = new Bread(testLoaves);
       int result = newBread.TotalBreadPrice();
       Assert.AreEqual(testPrice, result);
+    }
+    [TestMethod]
+    public void BreadDeal_ReturnsNumberOfLoavesBasedOnDeal_Int()
+    { 
+      int testLoaves = 2;
+      Bread newBread = new Bread(testLoaves);
+      int dealLoaves = 3;
+      int result = newBread.NumberOfLoaves;
+      Assert.AreEqual(dealLoaves, result);
     }
   }
 }
