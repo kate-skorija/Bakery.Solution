@@ -32,18 +32,19 @@ namespace Bakery.TestTools
     [TestMethod]
     public void TotalBreadPrice_ReturnsPriceBasedOnNumberOfLoaves_Int()
     { 
-      int testLoaves = 2;
-      int testPrice = 10;
+      int testLoaves = 4;
+      int testPrice = 20;
       Bread newBread = new Bread(testLoaves);
-      int result = newBread.TotalBreadPrice();
+      newBread.TotalBreadPrice();
+      int result = newBread.Price;
       Assert.AreEqual(testPrice, result);
     }
     [TestMethod]
     public void BreadDeal_ReturnsNumberOfLoavesBasedOnDeal_Int()
     { 
-      int startingLoaves = 2;
+      int startingLoaves = 4;
       Bread newBread = new Bread(startingLoaves);
-      int totalLoaves = 3;
+      int totalLoaves = 6;
       newBread.BreadDeal();
       int result = newBread.NumberOfLoaves;
       Assert.AreEqual(totalLoaves, result);

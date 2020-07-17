@@ -17,11 +17,9 @@ namespace Bakery.Models
       int freeLoaves = NumberOfLoaves / 2; 
       NumberOfLoaves += freeLoaves;
     }
-    public int TotalBreadPrice()
+    public void TotalBreadPrice()
     {
-      int totalBreadPrice = 0;
-      totalBreadPrice += (Price * NumberOfLoaves);
-      return totalBreadPrice;
+      Price = (Price * NumberOfLoaves);
     }
   }
 }
