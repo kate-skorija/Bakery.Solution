@@ -1,5 +1,9 @@
 using System;
+using System.Drawing;
+using System.Console;
+using Console = Colorful.Console;
 using Bakery.Models;
+
 public class Program
 {
   private static string _orderName;
@@ -59,6 +63,11 @@ public class Program
 
   public static void Main()
   {
+    var font = FigletFont.Load("bulbhead.flf");
+    Figlet figlet = new Figlet(font);
+    Console.WriteLine("console in pink", Color.Pink);
+    Console.WriteLine("console in default");
+    Console.WriteLine(figlet.ToAscii("Welcome to Pierre's Bakery!"));
     Console.WriteLine("Welcome to Pierre's Bakery! [Press 'Enter' to continue]");
     Console.ReadLine();
     Console.WriteLine("Today we are offering loaves of garlic bread and blueberry pastries.");
