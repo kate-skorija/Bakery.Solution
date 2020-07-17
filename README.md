@@ -42,7 +42,6 @@ This is a C# console application that takes a user's order for bread and pastrie
   * Input: User is finished ordering.
   * Output: "Loaves of Bread: 3, Pastries: 3, Total Price: $15"
 
-
 ## Setup/Installation Requirements
 
 1.  Navigate to the [Bakery.Solution respository](https://github.com/kate-skorija/Bakery.Solution) or open your terminal

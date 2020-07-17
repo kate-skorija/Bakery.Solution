@@ -59,6 +59,8 @@ public class Program
   }
   public static void Main()
   {
+    Console.ForegroundColor = ConsoleColor.Blue;
+    Console.Clear();
     Console.WriteLine("Welcome to Pierre's Bakery! [Press 'Enter' to continue]");
     Console.ReadLine();
     Console.WriteLine("Today we are offering loaves of garlic bread and blueberry pastries.");
