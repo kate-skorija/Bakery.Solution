@@ -41,6 +41,18 @@ public class Order
     Console.WriteLine("Number of Loaves: " + TotalLoaves);
     Console.WriteLine("Number of Pastries: " + TotalPastries);
     Console.WriteLine("Total: $" + OrderPrice);
+    Console.WriteLine("Would you like to add anything to your order? [Enter 'Y' for 'Yes', any other key for 'No']");
+    string answer = Console.ReadLine();
+    if (answer == "Y" || answer == "y")
+    {
+      OrderBread();
+      OrderPastries();
+      DisplayOrder();
+    }
+    else
+    {
+      Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
+    }
   }
   public static void Main()
   {
