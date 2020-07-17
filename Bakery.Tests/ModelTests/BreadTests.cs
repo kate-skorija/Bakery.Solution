@@ -39,16 +39,6 @@ namespace Bakery.TestTools
       int result = newBread.Price;
       Assert.AreEqual(testPrice, result);
     }
-    [TestMethod]
-    public void BreadDeal_ReturnsNumberOfLoavesBasedOnDeal_Int()
-    { 
-      int startingLoaves = 2;
-      Bread newBread = new Bread(startingLoaves);
-      int totalLoaves = 3;
-      newBread.BreadDeal();
-      int result = newBread.NumberOfLoaves;
-      Assert.AreEqual(totalLoaves, result);
-    }
   }
 }
 
