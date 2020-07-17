@@ -26,13 +26,22 @@ This is a C# console application that takes a user's order for bread and pastrie
   * Input: "2" & "3"
   * Output: "Your total comes to $16."
 
-**Behavior**: Program will offer a Buy 2, Get 1 Free Deal for bread.
-  * Input: "2" & "3"
-  * Output: "We have a Buy 2, get 1 Free Deal, so you get an extra loaf of bread with your order of 2 loaves."
-
 **Behavior**: Program will offer a Buy 3 for $5 Deal for pastries.
   * Input: "2" & "3"
   * Output: "With our Buy 3 for $5 Pastry Deal, your revised total is $15."
+
+**Behavior**: Program will allow user to add more loaves or pastries before 'checkout'.
+  * Output: "Would you like to add anything to your order?"
+  * Input: "0" & "1"
+
+**Behavior**: At checkout, program will add any extra loaves of bread, since for every 2 loaves they get one for free.
+  * Input: User is finished ordering.
+  * Output: Loaves of Bread is updated from 2 to 3. 
+
+**Behavior**: After user is finished adding any additional items, program will display total loaves, pastries, and price.
+  * Input: User is finished ordering.
+  * Output: "Loaves of Bread: 3, Pastries: 3, Total Price: $15"
+
 
 ## Setup/Installation Requirements
 
@@ -43,7 +52,7 @@ This is a C# console application that takes a user's order for bread and pastrie
 
 3. Navigate to the `Bakery.Solution` directory in your editor of choice, or use [Visual Studio Code](https://code.visualstudio.com/)
 
-5. Within the project, navigate to the Bakery directory, and type `dotnet run`. This will open the interactive console app.
+5. Within the project, navigate to the Bakery directory, and type `dotnet run`. This will open the interactive console app. There will be several lines of introductory material. Press 'Enter' to navigate through the welcome information.
 
 6. If you wish to test the code, navigate to the Bakery.Tests directory. In the terminal type `dotnet restore`, then `dotnet test`.
 

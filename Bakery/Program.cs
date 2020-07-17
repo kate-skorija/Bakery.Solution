@@ -1,6 +1,5 @@
 using System;
 using Bakery.Models;
-
 public class Program
 {
   private static string _orderName;
@@ -50,19 +49,19 @@ public class Program
       OrderBread();
       OrderPastries();
       AddExtraLoaves();
+    }
       Console.WriteLine("~ " + _orderName + "'s Order ~");
       Console.WriteLine("Number of Loaves: " + _loavesOrder);
       Console.WriteLine("Number of Pastries: " + _pastriesOrder);
       Console.WriteLine("Total: $" + _orderPrice);
-      Console.WriteLine("Thank you for shopping at Pierre's Bakery!");
-    }
+      Console.WriteLine("Order Complete! Thank you for shopping at Pierre's Bakery.");
   }
 
   public static void Main()
   {
     Console.WriteLine("Welcome to Pierre's Bakery! [Press 'Enter' to continue]");
     Console.ReadLine();
-    Console.WriteLine("Today we have loaves of bread and pastries available.");
+    Console.WriteLine("Today we are offering loaves of garlic bread and blueberry pastries.");
     Console.ReadLine();
     Console.WriteLine("Loaves of bread cost $5 each, and pastries cost $2 each.");
     Console.ReadLine();
