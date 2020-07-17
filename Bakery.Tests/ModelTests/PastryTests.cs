@@ -29,5 +29,14 @@ namespace Bakery.TestTools
       int result = newPastry.NumberOfPastries;
       Assert.AreEqual(testPastries, result);
     }
+    [TestMethod]
+    public void TotalPastryPrice_ReturnsPriceBasedOnNumberOfPastries_Int()
+    { 
+      int testPastries = 2;
+      int testPrice = 4;
+      Pastry newPastry = new Pastry(testPastries);
+      int result = newPastry.TotalPastryPrice();
+      Assert.AreEqual(testPrice, result);
+    }
   }
 }
