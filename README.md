@@ -68,6 +68,7 @@ If there are any issues or questions, please reach out to me through [my GitHub 
 *  [Visual Studio Code](https://code.visualstudio.com/)
 *  [Markdown](https://daringfireball.net/projects/markdown/)
 *  [C#](https://docs.microsoft.com/en-us/dotnet/csharp/)
+*  [.NET-Core 2.2](https://dotnet.microsoft.com/download/dotnet-core/2.2)
 
 ### License
 
