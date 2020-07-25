@@ -7,7 +7,7 @@ public class Program
   private static int _loavesOrder;
   private static int _pastriesOrder;
   private static int _orderPrice;
-  public void OrderBread()
+  public static void OrderBread()
   {
     Console.WriteLine("How many loaves of bread would you like to order, " + _orderName + "?");
     string stringLoaves = Console.ReadLine();
@@ -17,7 +17,7 @@ public class Program
     _loavesOrder += userBreadOrder.NumberOfLoaves;
     _orderPrice += userBreadOrder.Price;
   }
-  public void OrderPastries()
+  public static void OrderPastries()
   {
     Console.WriteLine("How many pastries would you like to order, " + _orderName + "?");
     string stringPastries = Console.ReadLine();
@@ -27,7 +27,7 @@ public class Program
     _pastriesOrder += userPastryOrder.NumberOfPastries;
     _orderPrice += userPastryOrder.Price;
   }
-  public void DisplayOrder()
+  public static void DisplayOrder()
   {
     Console.WriteLine("~ " + _orderName + "'s Order ~");
     Console.WriteLine("Number of Loaves: " + _loavesOrder);
@@ -35,12 +35,12 @@ public class Program
     Console.WriteLine("Total: $" + _orderPrice);
     AddToOrder();
   }
-  public void AddExtraLoaves()
+  public static void AddExtraLoaves()
   {
     int freeLoaves = (_loavesOrder / 2); 
     _loavesOrder += freeLoaves;
   }
-  public void AddToOrder()
+  public static void AddToOrder()
   {
     Console.WriteLine("Would you like to add anything to your order? (Your extra loaves will be added at checkout.) [Enter 'Y' for 'Yes', any other key for 'No']");
     string answer = Console.ReadLine();
@@ -77,12 +77,11 @@ public class Program
     string answer = Console.ReadLine();
     if (answer == "Y" || answer == "y")
     {
-      Program newOrder = new Program();
       Console.WriteLine("Please enter an order name.");
       _orderName = Console.ReadLine();
-      newOrder.OrderBread();
-      newOrder.OrderPastries();
-      newOrder.DisplayOrder();
+      OrderBread();
+      OrderPastries();
+      DisplayOrder();
     }
     else
     {

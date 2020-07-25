@@ -6,7 +6,7 @@
 
 ## Description
 
-This is a C# console application that takes a user's order for bread and pastries from Pierre's Bakery. The application returns the total cost of the order, taking into account any deals that may be available.
+This was my first week learning C#! I've used the basics I've learned this week to make a console application for a fictional bakery. The application takes a user's order for bread and pastries from Pierre's Bakery. It then returns the total cost of the order, taking into account any deals that may be available. This project also focuses on testing, and I used MSTest to test my models.
 
 ## Specifications
 
